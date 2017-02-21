@@ -1,0 +1,75 @@
+To start the browser sync
+
+Command:    browser-sync start --server --directory --files "*"
+
+start command to start the browser sync
+--server command to use the browser sync as server which in turn serves our files
+--directory command to launch the directory structure of the present working directory
+--files 
+"*" tells if any changes occur in any of the files in the pwd, then reflect in the browser-sync server (browser)
+
+For our web application, the above command is not sufficient bcoz it tells to look for any changes in the files kept in PWD location
+What if we had some folder in the PWD and a file inside of it and we are making some changes to that file? It wont reflect in the browser
+So, we need to change the above command to have **/* instead of * which means we are telling the browser to look into "any sub folder within this folder(**) and any files within those sub folders(**/*) - as chaikin says - Watch out every directory all the way down in the PWD folder structure"
+
+Command:    browser-sync start --server --directory --files "**/*"
+
+
+The below given codes are extracted from bootstrap.min.css. If we are using container element as a class then we will have default styles set from bootstrap. Their width are pre-defined for us. 
+Here we see container is an object which is responsive. 
+
+The class 'container-fluid' stretches to the full width of the browser window (minus some margins) and automatically adjusts its width as you change the width of the browser.
+
+The 'container' class has responsive pre-defined widths, so it only adjusts its width at some pre-defined breakpoints.
+
+.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+
+@media (min-width:768px){.container{width:750px}}
+@media (min-width:992px){.container{width:970px}}
+@media (min-width:1200px){.container{width:1170px}}
+
+.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+
+Design idea:
+
+Why does chaikin place container inside the navbar?
+Bcoz the navbar will have yellow color and it will stretch from left corner to right corner while our contents of the navbar 
+will be container inside the defined class called "container". This is a design idea.
+Whenever we start with a navigation we want that header color stretch till end of the screen no matter what, the size of the container.
+And we would also want our navigation bar contents inside of this navbar and wont want to stretch beyond a limit. Mostly keeping it to center of the page in the nav bar will be looking nice.
+
+navbar-header inside bootstrap: What is the use and how to use it?
+
+This navbar is like a wrapper class for our navigation elements which soemtimes floats and does not other times.
+
+How do we know which class to choose from bootstrap for our work?
+getbootstrap.com/components
+
+
+We use glyphicons from bootstrap for our menu bar. Those are the little fork icons, menu icons that come on top of our menu bar.
+
+        If you want those glyphicons, use the respective classes in the span element(recommended by bootstrap)
+        <ul id="list1" style="list-style: none;">
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-earphone"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-play"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-chevron-right"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-arrow-up"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-arrow-down"></span></li>
+        
+        
+        </ul>
+        
+        
+        or another design
+        
+            <ul id="list1" style="list-style: none;">
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-star"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-star"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-star"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-star"></span></li>
+            <li style="float:left; margin-top:15px; padding:15px; border:1px solid white"><span class="glyphicon glyphicon-star"></span></li>
+        
+        </ul>
+        
+
+

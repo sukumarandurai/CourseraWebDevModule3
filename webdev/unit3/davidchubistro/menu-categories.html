@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>David Chu's China Bistro</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,700i" rel="stylesheet">
+    </head>
+    <body>
+    
+        <header>
+        
+            <nav id="header-nav" class="navbar navbar-default"><!--navbar and navbar default are named so that we can obtain their styles from bootstrap file. There are two navbars bcoz we have some features coming from navbar base class. and there is another nav-bar default class used which containes other features not in navbar class-->
+                <!--Check this once in browser-->
+            
+            <div class="container">
+                <!--Navigation elements will be contained within this div-->
+                
+                <div class="navbar-header">
+                    
+                    <!--Logo image inside the navbar-header-->
+                    <a href="index.html"  class="pull-left visible-md visible-lg"><!--Let us add logo as a clickable link that when clicked will point to the home page-->
+                         <!--pull-left class from bootstrap simply floats this element-->
+                        <div id="logo-img" alt="Logo image"></div> <!-- We are adding a div element instead of img element for logo bcoz we want to have our logo as background image in this div. see logo-img in styles.css-->
+                    </a>
+                    
+                    
+                    <!--Company name next to Logo-->
+                    <div class="navbar-brand">
+                        <a href="index.html"><h1>David Chu's China Bistro</h1></a> <!--Clickable link for name which points to the home page-->
+                       
+                        <p>
+                        <img src="images/star-k-logo.png" alt="Kosher certification">
+                            <span>Kosher Certified</span>
+                        </p>
+                    
+                    </div>
+                    
+                    <!--Copied this code from getbootstrap.com/components site-->
+                    <!--The way this part of the code works is that when the width is around 768px, we get to see the new menu button (similar to what we see in the mobile screen menus). With the help of this code copied from bootstrap, we can only get the button. "navbar-toggle" is the class that has the declarations set for the button styles. class "collapsed" does not exist at all in bootstrap.min.css. It is a class that gets set based on javascript in js/bootstrap.js. 
+
+                    "data-toggle", "data-target" or any "data-*" are HTML5 data attributes (unlike other HTML attributes) that javascript, javascript plug-ins, css can access directly to set the values, use the attribute values defined in HTML5 script
+            
+                    For reference:
+                    https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+
+                    For example, if we search for this data-toggle attribute's value called collapse in bootstrap.js, we would reach a collapse plug in. The details can be seen from the bootstrap.js code. Similarly, we have written some code that accesses data-target attribute whose value "#collapsable-nav" was given by us. This value is an ID of an element that contains our menu of items which expand/collapse based on size-->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false"> <!--aria-expanded for screen readers-->
+                    <span class="sr-only">Toggle navigation</span> <!--Only for screen readers-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    
+                    
+                    
+                </div>
+                
+                <!--Keeping the menu options out of navbar-header bcoz we dont need the menu item there that collapses/expands when the toggle button is pressed-->
+                
+                <div id="collapsable-nav" class="collapse navbar-collapse"><!--Contains all our navigation menus. The class name is same as the one mentioned in the data-target attribute in the menu button.
+
+                When the button was clicked, the collapse plugin in bootstrap js code will understand that the data-target ="#collapsable-nav" is pointing to this div which has the id "collapsable-nav"
+
+                Additional class information such as class="collapse navbar-collapse" is recommended by bootstrap for styling
+                -->
+                  <!--Generally, unordered list tag is used for displaying menu items-->
+                    <ul id="nav-list" class="nav navbar-nav navbar-right">
+                        <!--nav and navbar-nav classes turn our unordered list into navigation menu in navigation bar
+
+                        navbar-right class specifies that the list will be pulled to the right and aligned to the right as we have it in our mockup-->
+
+                        <li class="active"> <!--Since we are in the -->
+                            <a href="menu-categories.html">
+                                <span class="glyphicon glyphicon-cutlery"></span> <!--Vector based shape but it can be used like any font - (can be coloured, magnified, decreased in size etc)-->
+                                <br class="hidden-xs">
+                                Menu <!--br tag is for entering line breaks. not to separate paragraphs-->
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-info-sign"></span> <!--Vector based shape but it can be used like any font - (can be coloured, magnified, decreased in size etc)-->
+                                <br class="hidden-xs"> 
+                                About <!--br tag is for entering line breaks. not to separate paragraphs-->
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-certificate"></span> <!--Vector based shape but it can be used like any font - (can be coloured, magnified, decreased in size etc)-->
+                                <br class="hidden-xs"> 
+                                Awards <!--br tag is for entering line breaks. not to separate paragraphs-->
+                            </a>
+                        </li>
+                        
+                        <li id="phone" class="hidden-xs">
+                            <a href="tel:893-942-6587">
+                                <span>8939426587</span> 
+                            </a>
+                            <div>* We deliver</div>
+                        </li>
+                        
+                  </ul>
+                </div>
+                </div>
+            </nav>
+        </header><!--This is a semantic HTML5 Header-->
+    
+    
+        <!--div id="reccontainer">
+        <p id="rec1"></p>
+        <p id="rec2"></p>
+        <p id="rec3"></p>
+        </div-->
+        
+        <!--Start of main container-->
+        <div id="maincontent" class=container>
+            <!--First to let the user know we type the title of the page. Also, we use h2 because we use h1 for company name-->
+            <h2 id="menu-categories-title" class="text-center">Menu categories</h2>
+            
+            <div class="text-center">
+            Substituting white rice with brown rice or fried rice after 3.00pm will be $1.50 for a pint  and $2.50 for a quart.
+            </div>
+            
+            <!--We will put all our items into one section whose class we call row-->
+            
+            <!-- We want 6 menus in a row. so we can use col-md-2 class from bootstrap to achieve that-->
+            <section class="row">
+                
+                <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+                
+                 <!--image-->
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a>
+                        <div class="category-tile">
+                            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+                            <span>Lunch</span>
+                        </div>
+                    
+                    </a>
+                </div>
+            
+            
+            </section>
+        
+        
+        
+        </div><!--End of main container-->
+        
+        <!--Creating the footer of the page-->
+        
+        <footer class="panel-footer"> <!--sets a default container with padding etc on the page-->
+            <div class="container">
+                <div class="row">
+                    <section id="hours" class="col-sm-4">
+                        <span>Hours:</span><br>
+                        Sun-Thurs: 11.15am - 10.00pm<br>
+                        Fri: 11.15am - 2.30pm<br>
+                        Saturday Closed
+                        <hr class="visible-xs">
+                    </section>
+                        
+                    <section id="address" class="col-sm-4">
+                        <span>Address:</span><br>
+                        7105 Reisterstown Road<br>
+                        Baltimore, MD 21215
+                        <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge 
+                        for all deliveries</p>
+                        <hr class="visible-xs">
+                    </section>
+                        
+                    <section id="testimonials" class="col-sm-4">
+                        <p>"The best chinese restaurant I've been to! And that's saying a lot, since 
+                        I have been to many!"</p>
+                        <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again"</p>
+                        <hr class="visible-xs">
+                    </section>
+                </div>
+                
+                    <div class="text-center"> &copy; Copyright David Chu's China Bistro 2016</div>
+            
+            
+            </div>
+        
+        
+        </footer>
+
+        
+        
+        
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    </body>
+
+</html>

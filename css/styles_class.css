@@ -1,0 +1,402 @@
+body{
+    font-size: 16px; /* Step1: Font size in the body tag - First property to be set - we want global parameters*/
+    color: white; /* Step2: We want all our text to appear white */
+    background-color: #61122f; /* Step3: Back ground color matches the hotel napkin color */
+    
+    /* Step4: Setting the general font chosen as per mockup and agreed by the client */
+    /*This Oxygen font was not initially present in the machine. So type google.com/fonts - search for oxygen using search box
+    Once found open the font page - select the font - customize tab(select 300, 400, 700) - back to "standard" tab - pick up the html <link> tag from the site and paste in head tag of our html. Also pick up the style specified and paste it into our style sheet.
+    */
+    
+    font-family: 'Oxygen', sans-serif;
+    
+}
+
+
+/*.container{
+    background-color: yellow;
+}*/
+
+#header-nav{
+    background-color: #f6b319;
+    border-radius: 0; /* This property is to reset the bounded edges of navbar class defined within bootstrap.min.css*/
+    border: 0;
+}
+
+#logo-img{
+    background: url('../images/restaurant-logo.png') no-repeat;
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0;
+    border-radius: 100%;
+    /* 
+    1. We give ../ because we are in css folder which is itself a folder inside the folder that contains images folder. So we have to go to root folder which is davidchubistro then point to image inside images folder: /images/logo.png.
+    2. no-repeat is to avoid the image from repeating (remember the krishna image repeated itself many times without no-repeat value)
+    */
+}
+
+.navbar-brand{
+    padding-top: 25px; /*push the brand name down slightly*/
+}
+
+
+.navbar-brand h1{
+    font-family: 'Lora', serif;
+    color: #557c3e;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .75;
+    
+}
+
+/*We see a the title underlined when hovering over the name.We want to remove that decoration */
+.navbar-brand a:hover, .navbar-brand a:focus{
+    text-decoration: none;
+}
+
+/*Some formatting for kosher certification*/
+.navbar-brand p{ /*p which is a descendant of .navbar-brand at any level */
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.7em; /*Make it smaller than usual under the logo*/
+    margin-top: 15px; /*To separate this from company name*/
+}
+
+.navbar-brand p span{
+    vertical-align: middle;
+}
+
+#nav-list{
+    margin-top: 10px; /*Whole of this menu need to be pushed down a bit from the top*/
+}
+
+#nav-list a{
+    color:#951c49; /*Need to get the napkin color for all the menus*/
+    text-align: center;
+}
+
+#nav-list a:hover{
+    background: #E7E7E7;
+}
+
+#nav-list a span{
+    font-size: 1.8em;
+}
+
+#phone{
+    margin-top: 5px;
+}
+
+#phone a{
+    text-align: right;
+    padding-bottom: 0;
+}
+
+#phone div{
+    color: #557c3e;
+    text-align: right;
+    padding-right: 15px;
+}
+
+
+/* Adding more style for navbar button and icon-bar in navbar-header */
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar{
+    border: 1px solid #61122f;
+}
+
+/*The navigation header (yellow) is shrinking in size - because of floating property of navbar-brand is floating to the left
+we need to clear this property in the button*/
+.navbar-header button.navbar-toggle{
+    clear:both;
+}
+
+/* Styling for the body of the home page */
+
+/*Medium sized devices seem to have some problem. If we shrink the screen, we have logo & name in a div and right-side menu in a div dont float in the same row because the total area available for them is less. Hence, the menu options jump to the next line. To fix this, we can shrink the size of the logo depending on the size.*/
+
+.container .jumbotron{
+        box-shadow: 0 0 50px #3f0c1f; /*Instead of giving this color #3f0c1f, if we give #000, our photo would look like hanging from a wall*/
+        border: 2px solid #3f0c1f;
+}
+
+
+/*Styling for the tiles*/
+#menu-tile, #specials-tile, #map-tile{
+    width:100%; /* Width is set to 100% and this tile gets positioned for the full width inside the div element with three classes col-md, col-sm, col-xs appropriately*/
+    height: 250px;
+    margin-bottom: 15px; /*This is needed when the tiles stacked one upon the other in case of small sizes */
+    position: relative; /*This sets the placeholder for the element that is being moved*/
+    border: 2px solid #3f0c1f;
+    overflow: hidden;
+}
+
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover{
+    box-shadow: 0 1px 5px 1px #ccc;
+}
+
+
+/*Placing the images in the container for menu-tiles, */
+#menu-tile{
+    background: url("../images/menu-tile.jpg") no-repeat;
+    background-position: center;
+}
+
+#specials-tile{
+    background: url("../images/specials-tile.jpg") no-repeat;
+    background-position: center;
+}
+
+
+/*Position the span elements "menu", "specials" inside the back ground photo*/
+/*Using specific target selector where each of the classes and span elements inside them are targeted*/
+#menu-tile span, #specials-tile span, #map-tile span{
+    position: absolute;
+    bottom: 0; /* From bottom 0px*/
+    right: 0; /* From right 0 px*/ /*This two will set the span element at the bottom right corner*/
+    width: 100%; /* stretch the span element across the width of the containing element*/
+    text-align: center; /*The above two properties and this property will set the span at bottom center*/
+    font-size: 1.6em;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    opacity: .8;
+}
+
+@media (min-width: 1200px){
+    /*For the responsive images - jumbotron*/
+    .container .jumbotron{
+        background: url("../images/jumbotron_1200.jpg") no-repeat;
+        height: 675px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    #logo-img{
+        background: url('../images/restaurant-logo_medium.png') no-repeat;
+        width: 100px;
+        height: 100px;
+        margin: 5px 5px 5px 0;
+    }
+    /*For the responsive images - jumbotron*/
+    .container .jumbotron{
+        background: url("../images/jumbotron_992.jpg") no-repeat;
+        height: 558px;
+
+    }
+    
+}
+@media (min-width: 768px) and (max-width: 991px){
+    
+       /*For the responsive images - jumbotron*/
+    .container .jumbotron{
+        background: url("../images/jumbotron_768.jpg") no-repeat;
+        height: 432px;
+
+    }
+    
+    
+}
+@media (max-width: 767px){ /*Extra small devices */
+    .navbar-brand{
+        padding-top: 10px;
+        height: 80px;
+    }
+    
+    .navbar-brand h1{   /* Restaurant name */
+        padding-top: 10px;
+        font-size: 5vw;
+    }
+    
+    .navbar-brand p{   /* Restaurant name */
+        font-size: .6em;
+        margin-top: 12px;
+    }
+    
+    .navbar-brand p img{   /* Restaurant name */
+        height: 20px;
+    }
+    
+    
+    /*Adjusting the sizes of menus in the menu drop down*/
+    #collapsable-nav a{/*a element within the #collapsable-nav element*/
+        font-size: 1.2em; /*Sets the size of words Menu,info etc to 1.2em, but as a side effect increases the glyph icon also*/
+    }
+    
+    /*Targeting the glyph icon according to our specificity principles*/
+    #collapsable-nav a span{
+        font-size: 1em; /*Adjusting the glyph size to menu size*/
+        margin-right: 5px;
+    }
+    
+    /*Menu tile and special tile have pictures with width 360px. So, for the higher widths of tiles, the images appear very much in middle with lot of spaces in the side. To remove that and make the tiles align properly with the images, we do the following*/
+    #menu-tile, #specials-tile{
+        width: 360px;
+        margin: 0 auto 15px;
+    }
+    
+    
+    
+    /*For the footer in the xtra small devices*/
+    .panel-footer section{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .panel-footer section:nth-child(3){
+        margin-bottom: 0; /*The margin that separates copyright div from section rows already exists*/
+    }
+    
+    .panel-footer section hr{
+        width: 50%;
+    }
+    
+    
+    
+}
+
+
+.container .jumbotron{
+    margin-top: 30px;
+    padding: 0;
+    box-shadow: 0 0 50px #3f0c1f;
+    border: 2px solid #3f0c1f;
+}
+
+
+
+/*** For very small devices such as iphone4 or so, we need to adjust the images to become responsive which it is not at present*/
+@media (max-width:479px){
+    
+    #menu-tile, #specials-tile{
+        width:200px;
+        margin: 0 auto 15px;
+    }
+    
+    
+    /*Also the header "David Chu's China Bistro" is not prominent enough in these very small devices*/
+    .navbar-brand h1{
+        padding-top: 5px;
+        font-size: 6vw;
+    }
+    
+    
+    .col-xxs-12{ /*These properties are extracted from bootstrap code for the class col-xs-12*/
+        position: relative;
+        min-height: 1px; /*There should be at least a minimum height for the element*/
+        float: left;
+        width: 100%; /*Since it is col-xs-12 we need to stretch the element assigned with the class col-xs-12 have width 100%*/
+        padding-left: 15px; /*Since we have 100% width of the container we would need some padding to the sides */
+        padding-right: 15px;
+    }
+    
+    
+}
+
+
+/*Footer styles*/
+.panel-footer{
+    margin-top: 30px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    background-color: #222;
+    border-top: 0;
+}
+
+/*To separate the row with three sections from copyright*/
+.panel-footer div.row{
+    margin-bottom: 35px;
+}
+
+
+/*Increasing the line height of the sections in this row to make it more readable*/
+#hours, #address{
+    line-height: 2;
+}
+
+/*Increase the size of heading(span elements - hours, address)*/
+#hours>span, #address>span{
+    font-size: 1.3em;
+}
+
+/*Targeted styling to highlight delivery option in the address section */
+#address p {
+    color: #557c3e;
+    font-size: .8em;
+    line-height: 1.8;
+}
+
+/*Italic for testimonials*/
+#testimonials{
+    font-style: italic;
+}
+
+/*To apply formatting only to the second paragraph */
+#testimonials p:nth-child(2){
+    margin-top: 25px;
+}
+
+
+/***********************************************************************************************/
+                
+/* Menu categories page */
+
+.category-tile{
+    position: relative; /*If we set this category tile to relative, we will be able to position the span element properly*/
+    border: 2px solid #3f0c1f;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+}
+
+.category-tile span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.category-tile:hover{
+    box-shadow: 0 1px 5px 1px #ccc;
+}
+
+#menu-categories-title + div{ 
+    margin-bottom: 50px;
+}
+
+/* The following code can be used to understand floating containers */
+/*
+#rec1, #rec2, #rec3{
+    width: 50px;
+    height: 50px;
+    margin:5px;
+}
+
+#reccontainer{
+    position: relative;
+    display: block;
+    border: 2px solid white;
+    margin: 70px;
+}
+
+#rec1{
+    float:right;
+    background-color: skyblue;
+}
+
+#rec2{
+    background-color: seashell;
+}
+
+#rec3{
+    background-color: greenyellow;
+}*/
