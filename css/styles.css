@@ -81,14 +81,14 @@ body{
 
 #maincontent>.container{
     width:100%;
-    padding:60px 0px 0px 0px;
+    padding:30px 0px 0px 0px;
 }
 
 #pageheading{
     text-align: center;
     vertical-align: middle;
     border: 0;
-    margin-top: 20px;
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
